@@ -20,21 +20,25 @@
 
     {% for movie in movies %}
     <div class="card" >
-        <div class="front" style="background-image: url('https://www.shortlist.com/media/images/2019/05/the-30-coolest-alternative-movie-posters-ever-2-1556670563-K61a-column-width-inline.jpg');">
-            <p class="large">1</p>
+        <div class="front" style="background-image: url('{{ movie.img_url }}');">
+            <p class="large">{{ movie.ranking }}</p>
         </div>
         <div class="back">
-            <div class="title">{{ movie.title }}<span class="release_date">(2011)</span></div>
+            <div>
+                <div class="title">{{ movie.title }}<span class="release_date"> {{ movie.year }}</span></div>
+                <br>
                 <div class="rating">
                    <label>{{ movie.rating }}</label>
                   <i class="fas fa-star star"></i>
                 </div>
+                <br>
                 <p class="review">{{ movie.review }}</p>
+                <br>
                 <p class="overview">
                     {{ movie.description }}
                 </p>
 
-                <a href="#" class="button">Update</a>
+                <a href="{{ url_for('views.update', id=movie.id) }}" class="button">Update</a>
                 <a href="#" class="button delete-button">Delete</a>
 
             </div>

@@ -15,6 +15,7 @@ def create_app():
 
     # initialize plugin
     db.init_app(app)
+
     # create database
     db.create_all()
 
