@@ -1,5 +1,5 @@
 {% extends 'bootstrap/base.html' %}
-{% import "bootstrap/wtf.html" as wtf %}
+{% import 'bootstrap/wtf.html' as wtf %}
 
 {% block styles %}
   {{ super() }}
@@ -11,11 +11,16 @@
 {% block title %}Select Movie{% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="content">
     <h1 class="heading">Select Movie</h1>
-  <p>
-    <a href="#"> MOVIE TITLE - MOVIE RELEASE DATE</a>
-  </p>
-
 </div>
+
+<div class="container-fluid">
+    {% for movie in options %}
+    <p>
+      <a href="{{ url_for('views.find_movie', id=movie.id) }}"> {{ movie.title }} - {{ movie.release_date }}</a>
+    </p>
+    {% endfor %}
+</div>
+
 {% endblock %}

@@ -10,9 +10,9 @@ class Movie(db.Model):
     title = db.Column(db.String(250), unique=True, nullable=False)
     year = db.Column(db.Integer(), nullable=False)
     description = db.Column(db.String(250))
-    rating = db.Column(db.Float, nullable=False)
-    ranking = db.Column(db.Integer(), nullable=False)
-    review = db.Column(db.String(250), nullable=False)
+    rating = db.Column(db.Float, nullable=True)
+    ranking = db.Column(db.Integer(), nullable=True)
+    review = db.Column(db.String(250), nullable=True)
     img_url = db.Column(db.String(250), nullable=False)
 
     def __repr__(self):

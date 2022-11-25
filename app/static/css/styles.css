@@ -58,7 +58,7 @@
 	 width: 100%;
 	 margin-top: 0;
 	 margin-left: 1rem;
-	 margin-bottom: 3rem;
+	 margin-bottom: 1rem;
 }
  .card {
 	 color: inherit;
@@ -211,4 +211,7 @@
 }
  .release_date {
 	 font-weight: normal;
+}
+.container-fluid {
+     max-width: 1500px;
 }
